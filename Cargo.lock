@@ -870,6 +870,7 @@ dependencies = [
  "hyper-timeout",
  "percent-encoding",
  "pin-project",
+ "prost",
  "tokio",
  "tokio-stream",
  "tower",

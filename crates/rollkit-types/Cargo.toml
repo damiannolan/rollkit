@@ -13,6 +13,6 @@ prost = { workspace = true, default-features = false }
 prost-types = { workspace = true }
 tonic = { workspace = true, default-features = false, features = [
     "codegen",
-    "codec",
+    "prost",
     "transport",
 ] }
