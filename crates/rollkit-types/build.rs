@@ -15,9 +15,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         })
         .collect();
 
+    let include_client = cfg!(feature = "client");
+
     tonic_build::configure()
         .build_server(false)
-        .build_client(false)
+        .build_client(include_client)
         .out_dir("src/proto")
         .compile(&proto_files, &["../../proto"])?;
 

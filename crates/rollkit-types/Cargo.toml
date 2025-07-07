@@ -3,6 +3,15 @@ name = "rollkit-types"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = ["client"]
+client = [
+    "tonic",
+    "tonic/transport", #     plus its 'transport' sub-feature
+    "tonic/prost",     # (usually needed so tonic exposes prost types)
+    "tonic/codegen",   # generated stubs use tonic::codegen helpers
+]
+
 [build-dependencies]
 tonic-build = { workspace = true }
 prost-build = { workspace = true }
@@ -11,4 +20,4 @@ walkdir = { workspace = true }
 [dependencies]
 prost = { workspace = true, default-features = false }
 prost-types = { workspace = true }
-tonic = { workspace = true, default-features = false, features = ["codegen"] }
+tonic = { workspace = true, default-features = false, optional = true }
