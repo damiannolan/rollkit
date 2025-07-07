@@ -9,9 +9,10 @@ members = ["crates/rollkit-types"]
 resolver = "2"
 
 [workspace.dependencies]
-prost = "0.12"
+prost = { version = "0.12", default-features = false }
 prost-build = "0.12"
 prost-types = "0.12"
-tonic = { version = "0.10", features = ["transport"] }
+# tonic = { version = "0.10", features = ["transport"] }
+tonic = { version = "0.10", default-features = false, features = ["codegen"] }
 tonic-build = "0.10"
 walkdir = "2.5.0"
