@@ -9,6 +9,6 @@ prost-build = { workspace = true }
 walkdir = { workspace = true }
 
 [dependencies]
-prost = { workspace = true }
+prost = { workspace = true, default-features = false }
 prost-types = { workspace = true }
-tonic = { workspace = true, features = ["transport"] }
+tonic = { workspace = true, default-features = false, features = ["codegen"] }
